@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jerzy Jiang — Academic Homepage</title>
+<style>
+  :root {
+    --ink: #1b1b2e;
+    --ink-light: #3a3a52;
+    --paper: #fafafa;
+    --card: #ffffff;
+    --accent: #1a4d8c;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --rule: #d1d5db;
+    --bg-subtle: #f3f4f6;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; transition: opacity .15s; }
+  a:hover { opacity: .75; text-decoration: underline; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+  .hero {
+    padding: 56px 0 44px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+  .hero-photo {
+    flex-shrink: 0;
+    width: 160px;
+    height: 200px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    object-fit: cover;
+    background: var(--bg-subtle);
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    margin-bottom: 4px;
+  }
+  .hero-text h1 span { font-weight: 400; color: var(--muted); font-size: 1.15rem; margin-left: 8px; }
+  .hero-contact {
+    margin-top: 10px;
+    font-size: .9rem;
+    color: var(--muted);
+  }
+  .hero-contact a { color: var(--accent); }
+  .hero-bio {
+    margin-top: 16px;
+    font-size: .935rem;
+    color: var(--ink-light);
+    line-height: 1.72;
+    max-width: 680px;
+  }
+  section { padding: 32px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  h2 {
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--rule);
+  }
+  .pub-list { list-style: none; }
+  .pub-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--bg-subtle);
+    display: grid;
+    gap: 4px 16px;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    font-size: .89rem;
+    line-height: 1.55;
+  }
+  .pub-list li:last-child { border-bottom: none; }
+  .pub-year {
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+    font-weight: 600;
+    white-space: nowrap;
+    min-width: 48px;
+  }
+  .pub-title { font-weight: 600; color: var(--ink); }
+  .pub-journal { color: var(--muted); font-style: italic; font-size: .84rem; }
+  .pub-tag {
+    display: inline-block;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    background: #eff6ff;
+    color: var(--accent);
+    padding: 1px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .edu-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .edu-deg { font-weight: 700; font-size: .92rem; color: var(--ink); }
+  .edu-school { font-size: .85rem; color: var(--accent); margin-top: 2px; }
+  .edu-detail { font-size: .8rem; color: var(--muted); margin-top: 4px; }
+  footer {
+    text-align: center;
+    padding: 36px 0 28px;
+    color: var(--muted);
+    font-size: .78rem;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+  @media (max-width: 640px) {
+    .hero { flex-direction: column; align-items: center; text-align: center; gap: 22px; }
+    .hero-photo { width: 130px; height: 162px; }
+    .hero-bio { max-width: 100%; }
+    .pub-list li { grid-template-columns: 1fr; gap: 2px; }
+    .pub-year { display: inline; }
+    .pub-year::after { content: "\00A0\2013\00A0"; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <img src="LJDG1639.JPG" width="200">
+  <div class="hero-text">
+    <h1>Jerzy Jiang</h1>
+    <div class="hero-contact">
+      <a href="mailto:zjiang71@alumni.jh.edu">zjiang71@alumni.jh.edu</a>
+    </div>
+    <div class="hero-bio">
+    Jerzy Jiang is currently the Deputy Director of the Capital Account Management Department at the State Administration of Foreign Exchange (SAFE). He previously served as a visiting student at Trinity College, Cambridge University, guided by Professor Sir James A. Mirrlees. In 2014, he worked as a Quant trading intern in London, focusing on Brent crude oil futures. From 2015 to 2016, he served as Manager of the Agricultural Products Department at the Zhengzhou Commodity Exchange, overseeing research on new futures products and market analysis of oilseed and sugar. Following this role, he joined SAFE. Between 2021 and 2024, Dr. Jiang served as an economist in the Capital Flow Unit of the Monetary and Capital Markets Department at the IMF Headquarters, where he was responsible for surveillance and assessment of exchange rate arrangements across over 30 countries. He is an Adjunct Research Fellow at the China Wealth Management 50 Forum and an Adjunct Professor at China Agricultural University. Dr. Jiang holds two doctoral degrees: one in Finance from the School of Economics and Management, Wuhan University, and another in International Affairs from the Paul H. Nitze School of Advanced International Studies, Johns Hopkins University. He also obtained MScs in Math & Finance, a B.A. in Finance, and a B.Eng. in Automation. Jerzy has received numerous research awards from the PBoC, SAFE, CSRC, JHU, and WHU. His research interests include capital flows, asset pricing, crypto transactions, derivatives regulation, etc. 
+    </div>
+  </div>
+</header>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <ul class="pub-list">
+    <li>
+      <span class="pub-year">2025</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-McOdg1DihydGnPQKcfOOrK8nE5G0D6RO9-hJ49k6lUT8njJqZQi4VHuN1VBn_CR_pb3V9IA-eGWinwVBC4_hzpVq-bKacz2xSW2mAMGn1rpdQGFBGAbZ_pEAnCKD8lig01jRA46LtPmyn5ydxETHL7195tpShRpDP_TCH_t8KNC6H7gaLrvY58kbVrgrrvcokI&uniplatform=NZKPT&captchaId=53fcdb61-5756-4e20-b992-2cf323c3b899">Analysis of Global Asset Custody Business in China's Commercial Banks</a></span><br><span class="pub-journal">China Finance</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2024</span>
+      <span><span class="pub-title">On Cross-Border Crypto Flows: Measurement, Drivers, and Policy Implications</span> <span class="pub-tag">WP</span><br><span class="pub-journal">IMF Working Paper WP/IEA/2024/261</span>&nbsp;<a href="https://www.imf.org/-/media/files/publications/wp/2024/english/wpiea2024261-print-pdf.pdf">[PDF]</a></span>
+    </li>
+    <li>
+      <span class="pub-year">2023</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MfxsnYdX355z9EdbyVfBSfVS-tQbKLzHCcflHNVCND6RQywnVpb5q1EW0FC3NgeWJikI0PfPOOmbKtdrC15nMVmRBFZbpREcrT_V0-zTmT4ktHkGJobOSgIr1bCjxG73S5gO1mMEWD9EtdB9PHcpiuWWVr8l7i16qSEA8ZOxT9tF8huJR4gHyLm0r_EfoEORGQ&uniplatform=NZKPT&captchaId=4568499d-4fe5-4836-92b5-6ccbd4e12b3e">Compliance Discussion and Regulation of Domestic Futures Investment by Overseas Private Institutions</a></span><br><span class="pub-journal">Finance &amp; Economy</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2023</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MeZmOGalFxdRhrGg3Ao_4LY0r702UgT5RF9tNixFDYMznAl-Q88CUUGC31MH2S-2IOJm0hzLLi9zM290HHCLUkKo8PfCxKlmMuH5zDEyzIBWVpyRNZZ8IoUayCFPwomkCG2_lo2AHPkgJam_a8v4dklAygDvv2EsAutF9_HGrdD_IsuSYBpi49hfkg6rx4587c&uniplatform=NZKPT&captchaId=a8e6d8b1-5eb8-4369-bc08-8e8654b40172">Challenges and Implications of Crypto Trading for Traditional Capital Flow Management</a></span><br><span class="pub-journal">Rural Finance Research</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2022</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-Mc4grUZKez9Fal2cViU0PdbkijAyzHCugSc-sx7hikKN80uFfLVIpuqmmm56sO2jXt2aZNSo8LCaPqALzCFsCvLUdwMlsyo97U5Llw2ksjcSKIqJww4Q0KZxQ45ULGWIkjMjVnE4nrxs4S2zCzVnUlrjXuCLzznYg2Vpmzm6JGOdMc6ETJUZ8v-27o5M4V5LTo&uniplatform=NZKPT&captchaId=3ea8ad95-7454-4243-9f54-dc3e5f4e0ec4">Capital Markets Connect Promoting the "Dual Circulation"</a></span><br><span class="pub-journal">China Finance</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2022</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-Mewucj71FO2dIxwxo_Ha1wPp4nEc7pKV1kFsE_Y7mzP0K7yeFFg4hrtRcIM0hw8CcFIMvBGhZZ_AYMz4sk4pzTekzT1YeOK7ckMxPoxEmQrHlg8zCirsK0hZF_Gbm6-3N8QxmvN7RFwK5jaJATM_Agdih4I9BUmWucRwRAv0JEV1JSa7JVfZAFFIJF7r116Mr8&uniplatform=NZKPT&captchaId=3ccbdf61-d86a-4a9f-ab50-ffbd85981fcb">Quality Development of China's Onshore FX Market Since Reform and Opening-Up: Process, Achievements, and Prospects</a></span><br><span class="pub-journal">Macroeconomic Quality Research</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2021</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-Me6bKSsjbdONjNbKMarVtFvy9A_OR92TLxdR_Z7nce5qijsJaS3t7EzHM1Tb4qwiJKw_bEfIXeAMcKtS8tdChGNbwPM7STeLDeM2DcUjEyQ82kgd4RlwJRLWv7ZBk6dnRYpRl0Rc3F0VjGwyDS9Eci49fPa4gEojjw4dQCWC6BI5K_strd-8u5T0kRpTBLFV5U&uniplatform=NZKPT&captchaId=30607024-c880-4517-9cbc-d33f352011e9">Internationalization of Futures Markets: Status, Problems, and Solutions</a></span><br><span class="pub-journal">Securities Market Herald</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2020</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MdgZFgxRTj8MVFvKdgvp9d685aJ1uEFpU5JTY5eDKL0jwHKsWAaieP4s2wyljJLNui0-TtH5-oLbOhtSt-dhvGqfYlWC5fOUzsMRMft0_dPRKaIZofxAypqteGwOISQZILosxdAVkzDff08h2N3V6gm5yBVJv0royTXdJKb6hRl2aIeE1JFRtq1qkMDM1spE1s&uniplatform=NZKPT&captchaId=a9679ee9-3e06-4903-bedb-f4cd5328be3d">International Experience, Institutional Design, and Risk Prevention Research on FX Margin Trading</a></span><br><span class="pub-journal">Southwest Finance</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2019</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MfobmdqhrR5qCD6u1s7N0nHaPNKAYQCWG_bKy9uDRr3AgLEMmgDGRu4LMbBhL67ccZwcPXlKTc3R3imDQOBiPGvcBxun1mrP56tahQOo0GnBz5IngHdllDEipf2S7J2FOTLSC-ZBYVmIVMXLDLrFFvsuGuYZqkBhDmA6qUsMZxcn3g9JWZfCOKY-Y-k5sbVc6A&uniplatform=NZKPT&captchaId=79b45116-6642-4dea-9b02-ee6dc32e6960">Research on Measurement and Supervision of Short-Term Cross-Border Capital Flows in China</a></span><br><span class="pub-journal">Financial Supervision Research</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2019</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MdNmU-PIbuC2QKIG3GpUQn0VaqX5re3NXebKWN_Jc-Xt_T8oaoh8RS5Mfejw4NUJdrpTRYLNlKOtfFqmd-Gj65H2wj-zasM6JKiFXnM507ZFo8rr66kA33WlU_He7gFJ2HVBDZWKMBol_moeux5qAy6nCFtX417Kr761Lvgzf4sB-LkDXDxECBz5JlSZEIpGs&uniplatform=NZKPT&captchaId=add69772-ba12-4c78-9904-6312331051c7">International Experience and Lessons from the Development of FX Futures Markets</a></span><br><span class="pub-journal">Finance &amp; Economy</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2019</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/verify/home?captchaType=clickWord&ident=bc397c&captchaId=0395f6ec-6e82-47e7-851f-28861ba5d1f7&returnUrl=iECBDnhr716Qd6pbb7El10nguP5Sbm9UQxpzsYxSAM-JuReIJajXtMpt_Ga65lrbASlXToxKTmWfnhAahkEMVirsPqP8OOuj6JLx6M7nAzuxsUpYUH8OhmMwiYK3vt-_wMBRXsGLkDkGv_-9WTWD8GBrwqOoVowRqnzqCwWZfqp9AMFgauNjeCqH8UkH5L4gx7R2YD9X1F01-Pxww-ppY_DjgNyVWIOvN01cd7YzVF4sAC86Ac-HIXz8SqZ7ucbkTTaGB7MVm_tZe9yltukXeBpTU9Igl05rk3J5eZPaSmkOlrUAS1r1ZWg13cfEENONtc9ywCjTvytzCzWVSQnAOdBGWQ1oXikOxR-a22BT83g%3D">Discussion on Two-Way Opening of Domestic Futures Markets</a></span><br><span class="pub-journal">Securities Market Herald</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2019</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/verify/home?captchaType=clickWord&ident=bc397c&captchaId=4e8afc80-fc98-4219-94f8-b949ac06a804&returnUrl=iECBDnhr716Qd6pbb7El10nguP5Sbm9UQxpzsYxSAM-JuReIJajXtMpt_Ga65lrbASlXToxKTmU-uYrl5umuZgoRu7a5fsu7oomu4pO2ccI7eaNsZ7MbRwIhiuTe972amCJHCyqcECVyhVViiRUUd027VGafyTIsvKCbxBQMOtMOpStR3cjOgkkM37QH4fO12NBpWfwYpZELOqy8IPCqdr4ecpy-gHRNWoJ84IlNBDXuJsFaPFOxwdSB1F8-ENZI3nlgVzhaDLhwro0yd19GWJpHpH4aRTTTBvkIoibGRWQ4VOzMqaP2wlEwOgZkZqoV-I9hWmR5x2L-9Zl_XtLONlOkXgmv0uYudaB1f0BO8ks%3D">Study on the Discretionary Mechanism for Macro-Prudential Management of Cross-Border Capital Flows</a></span><br><span class="pub-journal">Financial Economics Research</span></span>
+    </li>
+    <li>
+      <span class="pub-year">2017</span>
+      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MdCrqbCwIQ-wct7X38v4HI2VVm-03IQnlzF-M5hpzdJxrADJdK9TwP2ziQJl6OptHZh-KXZdPl5ZUO5vXY1spMUJNlwINR_7fFac-JNX3zAi277qUNqARmFVnTZ2wU-bPvJk1IwZJhAa6Z3b7MSOdZnXQ0qTphmBkBXjjFXIDhaL0GwAUp1vln8BbxFwSmqZHg&uniplatform=NZKPT&captchaId=703f4008-5149-481f-ba91-8238b2fb44cb">Research on Potential Risks and Supervisory Systems of Programmed Trading</a></span><br><span class="pub-journal">Financial Supervision Research</span></span>
+    </li>
+  </ul>
+</section>
+</div>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="yr"></span> Jerzy Jiang · Last updated May 2026
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
