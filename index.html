@@ -22,7 +22,8 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* 全局优先 Times New Roman，无该字体则衬线备用 */
+    font-family: "Times New Roman", Times, serif;
     background: var(--paper);
     color: var(--ink);
     line-height: 1.65;
@@ -31,8 +32,36 @@
   a { color: var(--accent); text-decoration: none; transition: opacity .15s; }
   a:hover { opacity: .75; text-decoration: underline; }
   .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  /* 顶部导航栏 */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+  .nav-links a {
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    font-weight: 500;
+  }
+  .nav-links a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
   .hero {
-    padding: 56px 0 44px;
+    padding: 40px 0 44px;
     display: flex;
     align-items: center;
     gap: 36px;
@@ -113,20 +142,6 @@
     margin-left: 6px;
     vertical-align: middle;
   }
-  .edu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 14px;
-  }
-  .edu-item {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 16px 18px;
-  }
-  .edu-deg { font-weight: 700; font-size: .92rem; color: var(--ink); }
-  .edu-school { font-size: .85rem; color: var(--accent); margin-top: 2px; }
-  .edu-detail { font-size: .8rem; color: var(--muted); margin-top: 4px; }
   footer {
     text-align: center;
     padding: 36px 0 28px;
@@ -135,7 +150,14 @@
     border-top: 1px solid var(--border);
     margin-top: 20px;
   }
+  /* 手机端自适应 */
   @media (max-width: 640px) {
+    .navbar {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+    .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
     .hero { flex-direction: column; align-items: center; text-align: center; gap: 22px; }
     .hero-photo { width: 130px; height: 162px; }
     .hero-bio { max-width: 100%; }
@@ -147,7 +169,19 @@
 </head>
 <body>
 <div class="wrap">
-<header class="hero">
+  <!-- 顶部导航 -->
+  <div class="navbar">
+    <div class="nav-name">Jerzy Jiang</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#perspectives">Perspectives</a>
+      <a href="#forthcoming">Forthcoming Papers</a>
+      <a href="#publications">Publications</a>
+    </div>
+  </div>
+
+<!-- About 个人简介 -->
+<header class="hero" id="about">
   <img src="LJDG1639.JPG" width="200">
   <div class="hero-text">
     <h1>Jerzy Jiang</h1>
@@ -160,7 +194,7 @@
   </div>
 </header>
 
-<!-- 平行模块1：Perspectives 研究观点 -->
+<!-- 研究观点 -->
 <section id="perspectives">
   <h2>Perspectives</h2>
   <ul class="pub-list">
@@ -176,7 +210,7 @@
   </ul>
 </section>
 
-<!-- 平行模块2：Forthcoming Papers 待刊论文（匹配你的PDF） -->
+<!-- 待刊论文 -->
 <section id="forthcoming">
   <h2>Forthcoming Papers</h2>
   <ul class="pub-list">
@@ -192,61 +226,126 @@
   </ul>
 </section>
 
-<!-- 平行模块3：Publications 已发表论文 -->
+<!-- 已发表论文 -->
 <section id="publications">
   <h2>Publications</h2>
   <ul class="pub-list">
     <li>
       <span class="pub-year">2025</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-McOdg1DihydGnPQKcfOOrK8nE5G0D6RO9-hJ49k6lUT8njJqZQi4VHuN1VBn_CR_pb3V9IA-eGWinwVBC4_hzpVq-bKacz2xSW2mAMGn1rpdQGFBGAbZ_pEAnCKD8lig01jRA46LtPmyn5ydxETHL7195tpShRpDP_TCH_t8KNC6H7gaLrvY58kbVrgrrvcokI&uniplatform=NZKPT&captchaId=53fcdb61-5756-4e20-b992-2cf323c3b899">Analysis of Global Asset Custody Business in China's Commercial Banks</a></span><br><span class="pub-journal">China Finance</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-McOdg1DihydGnPQKcfOOrK8nE5G0D6RO9-hJ49k6lUT8njJqZQi4VHuN1VBn_CR_pb3V9IA-eGWinwVBC4_hzpVq-bKacz2xSW2mAMGn1rpdQGFBGAbZ_pEAnCKD8lig01jRA46LtPmyn5ydxETHL7195tpShRpDP_TCH_t8KNC6H7gaLrvY58kbVrgrrvcokI&uniplatform=NZKPT&captchaId=53fcdb61-5756-4e20-b992-2cf323c3b899">Analysis of Global Asset Custody Business in China's Commercial Banks</a></span>
+        <br>
+        <span class="pub-journal">China Finance</span>
+        &nbsp;<a href="2025-asset-custody.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2024</span>
-      <span><span class="pub-title">On Cross-Border Crypto Flows: Measurement, Drivers, and Policy Implications</span> <span class="pub-tag">WP</span><br><span class="pub-journal">IMF Working Paper WP/IEA/2024/261</span>&nbsp;<a href="https://www.imf.org/-/media/files/publications/wp/2024/english/wpiea2024261-print-pdf.pdf">[PDF]</a></span>
+      <span>
+        <span class="pub-title">On Cross-Border Crypto Flows: Measurement, Drivers, and Policy Implications</span> <span class="pub-tag">WP</span>
+        <br>
+        <span class="pub-journal">IMF Working Paper WP/IEA/2024/261</span>
+        &nbsp;<a href="https://www.imf.org/-/media/files/publications/wp/2024/english/wpiea2024261-print-pdf.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2023</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MfxsnYdX355z9EdbyVfBSfVS-tQbKLzHCcflHNVCND6RQywnVpb5q1EW0FC3NgeWJikI0PfPOOmbKtdrC15nMVmRBFZbpREcrT_V0-zTmT4ktHkGJobOSgIr1bCjxG73S5gO1mMEWD9EtdB9PHcpiuWWVr8l7i16qSEA8ZOxT9tF8huJR4gHyLm0r_EfoEORGQ&uniplatform=NZKPT&captchaId=4568499d-4fe5-4836-92b5-6ccbd4e12b3e">Compliance Discussion and Regulation of Domestic Futures Investment by Overseas Private Institutions</a></span><br><span class="pub-journal">Finance &amp; Economy</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MfxsnYdX355z9EdbyVfBSfVS-tQbKLzHCcflHNVCND6RQywnVpb5q1EW0FC3NgeWJikI0PfPOOmbKtdrC15nMVmRBFZbpREcrT_V0-zTmT4ktHkGJobOSgIr1bCjxG73S5gO1mMEWD9EtdB9PHcpiuWWVr8l7i16qSEA8ZOxT9tF8huJR4gHyLm0r_EfoEORGQ&uniplatform=NZKPT&captchaId=4568499d-4fe5-4836-92b5-6ccbd4e12b3e">Compliance Discussion and Regulation of Domestic Futures Investment by Overseas Private Institutions</a></span>
+        <br>
+        <span class="pub-journal">Finance &amp; Economy</span>
+        &nbsp;<a href="2023-futures-compliance.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2023</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MeZmOGalFxdRhrGg3Ao_4LY0r702UgT5RF9tNixFDYMznAl-Q88CUUGC31MH2S-2IOJm0hzLLi9zM290HHCLUkKo8PfCxKlmMuH5zDEyzIBWVpyRNZZ8IoUayCFPwomkCG2_lo2AHPkgJam_a8v4dklAygDvv2EsAutF9_HGrdD_IsuSYBpi49hfkg6rx4587c&uniplatform=NZKPT&captchaId=a8e6d8b1-5eb8-4369-bc08-8e8654b40172">Challenges and Implications of Crypto Trading for Traditional Capital Flow Management</a></span><br><span class="pub-journal">Rural Finance Research</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MeZmOGalFxdRhrGg3Ao_4LY0r702UgT5RF9tNixFDYMznAl-Q88CUUGC31MH2S-2IOJm0hzLLi9zM290HHCLUkKo8PfCxKlmMuH5zDEyzIBWVpyRNZZ8IoUayCFPwomkCG2_lo2AHPkgJam_a8v4dklAygDvv2EsAutF9_HGrdD_IsuSYBpi49hfkg6rx4587c&uniplatform=NZKPT&captchaId=a8e6d8b1-5eb8-4369-bc08-8e8654b40172">Challenges and Implications of Crypto Trading for Traditional Capital Flow Management</a></span>
+        <br>
+        <span class="pub-journal">Rural Finance Research</span>
+        &nbsp;<a href="2023-crypto-trade.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2022</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-Mc4grUZKez9Fal2cViU0PdbkijAyzHCugSc-sx7hikKN80uFfLVIpuqmmm56sO2jXt2aZNSo8LCaPqALzCFsCvLUdwMlsyo97U5Llw2ksjcSKIqJww4Q0KZxQ45ULGWIkjMjVnE4nrxs4S2zCzVnUlrjXuCLzznYg2Vpmzm6JGOdMc6ETJUZ8v-27o5M4V5LTo&uniplatform=NZKPT&captchaId=3ea8ad95-7454-4243-9f54-dc3e5f4e0ec4">Capital Markets Connect Promoting the "Dual Circulation"</a></span><br><span class="pub-journal">China Finance</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-Mc4grUZKez9Fal2cViU0PdbkijAyzHCugSc-sx7hikKN80uFfLVIpuqmmm56sO2jXt2aZNSo8LCaPqALzCFsCvLUdwMlsyo97U5Llw2ksjcSKIqJww4Q0KZxQ45ULGWIkjMjVnE4nrxs4S2zCzVnUlrjXuCLzznYg2Vpmzm6JGOdMc6ETJUZ8v-27o5M4V5LTo&uniplatform=NZKPT&captchaId=3ea8ad95-7454-4243-9f54-dc3e5f4e0ec4">Capital Markets Connect Promoting the "Dual Circulation"</a></span>
+        <br>
+        <span class="pub-journal">China Finance</span>
+        &nbsp;<a href="2022-dual-circulation.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2022</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-Mewucj71FO2dIxwxo_Ha1wPp4nEc7pKV1kFsE_Y7mzP0K7yeFFg4hrtRcIM0hw8CcFIMvBGhZZ_AYMz4sk4pzTekzT1YeOK7ckMxPoxEmQrHlg8zCirsK0hZF_Gbm6-3N8QxmvN7RFwK5jaJATM_Agdih4I9BUmWucRwRAv0JEV1JSa7JVfZAFFIJF7r116Mr8&uniplatform=NZKPT&captchaId=3ccbdf61-d86a-4a9f-ab50-ffbd85981fcb">Quality Development of China's Onshore FX Market Since Reform and Opening-Up: Process, Achievements, and Prospects</a></span><br><span class="pub-journal">Macroeconomic Quality Research</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-Mewucj71FO2dIxwxo_Ha1wPp4nEc7pKV1kFsE_Y7mzP0K7yeFFg4hrtRcIM0hw8CcFIMvBGhZZ_AYMz4sk4pzTekzT1YeOK7ckMxPoxEmQrHlg8zCirsK0hZF_Gbm6-3N8QxmvN7RFwK5jaJATM_Agdih4I9BUmWucRwRAv0JEV1JSa7JVfZAFFIJF7r116Mr8&uniplatform=NZKPT&captchaId=3ccbdf61-d86a-4a9f-ab50-ffbd85981fcb">Quality Development of China's Onshore FX Market Since Reform and Opening-Up: Process, Achievements, and Prospects</a></span>
+        <br>
+        <span class="pub-journal">Macroeconomic Quality Research</span>
+        &nbsp;<a href="2022-fx-market.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2021</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-Me6bKSsjbdONjNbKMarVtFvy9A_OR92TLxdR_Z7nce5qijsJaS3t7EzHM1Tb4qwiJKw_bEfIXeAMcKtS8tdChGNbwPM7STeLDeM2DcUjEyQ82kgd4RlwJRLWv7ZBk6dnRYpRl0Rc3F0VjGwyDS9Eci49fPa4gEojjw4dQCWC6BI5K_strd-8u5T0kRpTBLFV5U&uniplatform=NZKPT&captchaId=30607024-c880-4517-9cbc-d33f352011e9">Internationalization of Futures Markets: Status, Problems, and Solutions</a></span><br><span class="pub-journal">Securities Market Herald</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-Me6bKSsjbdONjNbKMarVtFvy9A_OR92TLxdR_Z7nce5qijsJaS3t7EzHM1Tb4qwiJKw_bEfIXeAMcKtS8tdChGNbwPM7STeLDeM2DcUjEyQ82kgd4RlwJRLWv7ZBk6dnRYpRl0Rc3F0VjGwyDS9Eci49fPa4gEojjw4dQCWC6BI5K_strd-8u5T0kRpTBLFV5U&uniplatform=NZKPT&captchaId=30607024-c880-4517-9cbc-d33f352011e9">Internationalization of Futures Markets: Status, Problems, and Solutions</a></span>
+        <br>
+        <span class="pub-journal">Securities Market Herald</span>
+        &nbsp;<a href="2021-futures-international.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2020</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MdgZFgxRTj8MVFvKdgvp9d685aJ1uEFpU5JTY5eDKL0jwHKsWAaieP4s2wyljJLNui0-TtH5-oLbOhtSt-dhvGqfYlWC5fOUzsMRMft0_dPRKaIZofxAypqteGwOISQZILosxdAVkzDff08h2N3V6gm5yBVJv0royTXdJKb6hRl2aIeE1JFRtq1qkMDM1spE1s&uniplatform=NZKPT&captchaId=a9679ee9-3e06-4903-bedb-f4cd5328be3d">International Experience, Institutional Design, and Risk Prevention Research on FX Margin Trading</a></span><br><span class="pub-journal">Southwest Finance</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MdgZFgxRTj8MVFvKdgvp9d685aJ1uEFpU5JTY5eDKL0jwHKsWAaieP4s2wyljJLNui0-TtH5-oLbOhtSt-dhvGqfYlWC5fOUzsMRMft0_dPRKaIZofxAypqteGwOISQZILosxdAVkzDff08h2N3V6gm5yBVJv0royTXdJKb6hRl2aIeE1JFRtq1qkMDM1spE1s&uniplatform=NZKPT&captchaId=a9679ee9-3e06-4903-bedb-f4cd5328be3d">International Experience, Institutional Design, and Risk Prevention Research on FX Margin Trading</a></span>
+        <br>
+        <span class="pub-journal">Southwest Finance</span>
+        &nbsp;<a href="2020-fx-margin.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2019</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MfobmdqhrR5qCD6u1s7N0nHaPNKAYQCWG_bKy9uDRr3AgLEMmgDGRu4LMbBhL67ccZwcPXlKTc3R3imDQOBiPGvcBxun1mrP56tahQOo0GnBz5IngHdllDEipf2S7J2FOTLSC-ZBYVmIVMXLDLrFFvsuGuYZqkBhDmA6qUsMZxcn3g9JWZfCOKY-Y-k5sbVc6A&uniplatform=NZKPT&captchaId=79b45116-6642-4dea-9b02-ee6dc32e6960">Research on Measurement and Supervision of Short-Term Cross-Border Capital Flows in China</a></span><br><span class="pub-journal">Financial Supervision Research</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MfobmdqhrR5qCD6u1s7N0nHaPNKAYQCWG_bKy9uDRr3AgLEMmgDGRu4LMbBhL67ccZwcPXlKTc3R3imDQOBiPGvcBxun1mrP56tahQOo0GnBz5IngHdllDEipf2S7J2FOTLSC-ZBYVmIVMXLDLrFFvsuGuYZqkBhDmA6qUsMZxcn3g9JWZfCOKY-Y-k5sbVc6A&uniplatform=NZKPT&captchaId=79b45116-6642-4dea-9b02-ee6dc32e6960">Research on Measurement and Supervision of Short-Term Cross-Border Capital Flows in China</a></span>
+        <br>
+        <span class="pub-journal">Financial Supervision Research</span>
+        &nbsp;<a href="2019-short-capital.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2019</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MdNmU-PIbuC2QKIG3GpUQn0VaqX5re3NXebKWN_Jc-Xt_T8oaoh8RS5Mfejw4NUJdrpTRYLNlKOtfFqmd-Gj65H2wj-zasM6JKiFXnM507ZFo8rr66kA33WlU_He7gFJ2HVBDZWKMBol_moeux5qAy6nCFtX417Kr761Lvgzf4sB-LkDXDxECBz5JlSZEIpGs&uniplatform=NZKPT&captchaId=add69772-ba12-4c78-9904-6312331051c7">International Experience and Lessons from the Development of FX Futures Markets</a></span><br><span class="pub-journal">Finance &amp; Economy</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MdNmU-PIbuC2QKIG3GpUQn0VaqX5re3NXebKWN_Jc-Xt_T8oaoh8RS5Mfejw4NUJdrpTRYLNlKOtfFqmd-Gj65H2wj-zasM6JKiFXnM507ZFo8rr66kA33WlU_He7gFJ2HVBDZWKMBol_moeux5qAy6nCFtX417Kr761Lvgzf4sB-LkDXDxECBz5JlSZEIpGs&uniplatform=NZKPT&captchaId=add69772-ba12-4c78-9904-6312331051c7">International Experience and Lessons from the Development of FX Futures Markets</a></span>
+        <br>
+        <span class="pub-journal">Finance &amp; Economy</span>
+        &nbsp;<a href="2019-fx-futures-lesson.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2019</span>
-      <span><span class="pub-title"><a href="httpskns.cnki.net/verify/home?captchaType=clickWord&ident=bc397c&captchaId=0395f6ec-6e82-47e7-851f-28861ba5d1f7&returnUrl=iECBDnhr716Qd6pbb7El10nguP5Sbm9UQxpzsYxSAM-JuReIJajXtMpt_Ga65lrbASlXToxKTmWfnhAahkEMVirsPqP8OOuj6JLx6M7nAzuxsUpYUH8OhmMwiYK3vt-_wMBRXsGLkDkGv_-9WTWD8GBrwqOoVowRqnzqCwWZfqp9AMFgauNjeCqH8UkH5L4gx7R2YD9X1F01-Pxww-ppY_DjgNyVWIOvN01cd7YzVF4sAC86Ac-HIXz8SqZ7ucbkTTaGB7MVm_tZe9yltukXeBpTU9Igl05rk3J5eZPaSmkOlrUAS1r1ZWg13cfEENONtc9ywCjTvytzCzWVSQnAOdBGWQ1oXikOxR-a22BT83g%3D">Discussion on Two-Way Opening of Domestic Futures Markets</a></span><br><span class="pub-journal">Securities Market Herald</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/verify/home?captchaType=clickWord&ident=bc397c&captchaId=0395f6ec-6e82-47e7-851f-28861ba5d1f7&returnUrl=iECBDnhr716Qd6pbb7El10nguP5Sbm9UQxpzsYxSAM-JuReIJajXtMpt_Ga65lrbASlXToxKTmWfnhAahkEMVirsPqP8OOuj6JLx6M7nAzuxsUpYUH8OhmMwiYK3vt-_wMBRXsGLkDkGv_-9WTWD8GBrwqOoVowRqnzqCwWZfqp9AMFgauNjeCqH8UkH5L4gx7R2YD9X1F01-Pxww-ppY_DjgNyVWIOvN01cd7YzVF4sAC86Ac-HIXz8SqZ7ucbkTTaGB7MVm_tZe9yltukXeBpTU9Igl05rk3J5eZPaSmkOlrUAS1r1ZWg13cfEENONtc9ywCjTvytzCzWVSQnAOdBGWQ1oXikOxR-a22BT83g%3D">Discussion on Two-Way Opening of Domestic Futures Markets</a></span>
+        <br>
+        <span class="pub-journal">Securities Market Herald</span>
+        &nbsp;<a href="2019-futures-opening.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2019</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/verify/home?captchaType=clickWord&ident=bc397c&captchaId=4e8afc80-fc98-4219-94f8-b949ac06a804&returnUrl=iECBDnhr716Qd6pbb7El10nguP5Sbm9UQxpzsYxSAM-JuReIJajXtMpt_Ga65lrbASlXToxKTmU-uYrl5umuZgoRu7a5fsu7oomu4pO2ccI7eaNsZ7MbRwIhiuTe972amCJHCyqcECVyhVViiRUUd027VGafyTIsvKCbxBQMOtMOpStR3cjOgkkM37QH4fO12NBpWfwYpZELOqy8IPCqdr4ecpy-gHRNWoJ84IlNBDXuJsFaPFOxwdSB1F8-ENZI3nlgVzhaDLhwro0yd19GWJpHpH4aRTTTBvkIoibGRWQ4VOzMqaP2wlEwOgZkZqoV-I9hWmR5x2L-9Zl_XtLONlOkXgmv0uYudaB1f0BO8ks%3D">Study on the Discretionary Mechanism for Macro-Prudential Management of Cross-Border Capital Flows</a></span><br><span class="pub-journal">Financial Economics Research</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/verify/home?captchaType=clickWord&ident=bc397c&captchaId=4e8afc80-fc98-4219-94f8-b949ac06a804&returnUrl=iECBDnhr716Qd6pbb7El10nguP5Sbm9UQxpzsYxSAM-JuReIJajXtMpt_Ga65lrbASlXToxKTmU-uYrl5umuZgoRu7a5fsu7oomu4pO2ccI7eaNsZ7MbRwIhiuTe972amCJHCyqcECVyhVViiRUUd027VGafyTIsvKCbxBQMOtMOpStR3cjOgkkM37QH4fO12NBpWfwYpZELOqy8IPCqdr4ecpy-gHRNWoJ84IlNBDXuJsFaPFOxwdSB1F8-ENZI3nlgVzhaDLhwro0yd19GWJpHpH4aRTTTBvkIoibGRWQ4VOzMqaP2wlEwOgZkZqoV-I9hWmR5x2L-9Zl_XtLONlOkXgmv0uYudaB1f0BO8ks%3D">Study on the Discretionary Mechanism for Macro-Prudential Management of Cross-Border Capital Flows</a></span>
+        <br>
+        <span class="pub-journal">Financial Economics Research</span>
+        &nbsp;<a href="2019-macro-prudential.pdf">[PDF]</a>
+      </span>
     </li>
     <li>
       <span class="pub-year">2017</span>
-      <span><span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MdCrqbCwIQ-wct7X38v4HI2VVm-03IQnlzF-M5hpzdJxrADJdK9TwP2ziQJl6OptHZh-KXZdPl5ZUO5vXY1spMUJNlwINR_7fFac-JNX3zAi277qUNqARmFVnTZ2wU-bPvJk1IwZJhAa6Z3b7MSOdZnXQ0qTphmBkBXjjFXIDhaL0GwAUp1vln8BbxFwSmqZHg&uniplatform=NZKPT&captchaId=703f4008-5149-481f-ba91-8238b2fb44cb">Research on Potential Risks and Supervisory Systems of Programmed Trading</a></span><br><span class="pub-journal">Financial Supervision Research</span></span>
+      <span>
+        <span class="pub-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=LM91IAda-MdCrqbCwIQ-wct7X38v4HI2VVm-03IQnlzF-M5hpzdJxrADJdK9TwP2ziQJl6OptHZh-KXZdPl5ZUO5vXY1spMUJNlwINR_7fFac-JNX3zAi277qUNqARmFVnTZ2wU-bPvJk1IwZJhAa6Z3b7MSOdZnXQ0qTphmBkBXjjFXIDhaL0GwAUp1vln8BbxFwSmqZHg&uniplatform=NZKPT&captchaId=703f4008-5149-481f-ba91-8238b2fb44cb">Research on Potential Risks and Supervisory Systems of Programmed Trading</a></span>
+        <br>
+        <span class="pub-journal">Financial Supervision Research</span>
+        &nbsp;<a href="2017-algo-trade-risk.pdf">[PDF]</a>
+      </span>
     </li>
   </ul>
 </section>
