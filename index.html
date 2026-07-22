@@ -71,17 +71,19 @@
     display: flex;
     align-items: flex-start;
     gap: 36px;
-  }
+}
+.hero-text {
+    margin-top: 64px; /* 核心数值：文字整体下沉，按需微调 56 /64 /72px */
+}
 .hero-photo {
     flex-shrink: 0;
-    width: 160px;    /* 控制头像最大宽度，保持页面排版协调 */
-    height: auto;    /* 高度自动跟随图片，适配原图长宽比！关键改动 */
+    width: 160px;
+    height: auto;
     border-radius: 6px;
     box-shadow: 0 4px 20px rgba(0,0,0,.12);
     object-fit: contain;
-    background: transparent; /* 移除背景底色，不再出现白条 */
+    background: transparent;
     overflow: hidden;
-    margin-top: 60px;
 }
   .hero-text h1 {
     font-size: 2rem;
