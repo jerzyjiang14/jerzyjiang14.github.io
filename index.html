@@ -81,6 +81,7 @@
     object-fit: contain;
     background: transparent; /* 移除背景底色，不再出现白条 */
     overflow: hidden;
+    margin-top: 48px;
 }
   .hero-text h1 {
     font-size: 2rem;
@@ -171,7 +172,11 @@
     }
     .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
     .hero { flex-direction: column; align-items: center; text-align: center; gap: 22px; }
-    .hero-photo { width: 130px; height: 162px; }
+    .hero-photo { 
+      width: 130px; 
+      height: auto;
+      margin-top: 0 !important; 
+    }
     .pub-list li { grid-template-columns: 1fr; gap: 2px; }
     .pub-year { display: inline; }
     .pub-year::after { content: "\00A0\2013\00A0"; }
