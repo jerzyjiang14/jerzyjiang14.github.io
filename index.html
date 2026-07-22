@@ -179,16 +179,14 @@
     .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
     .hero { 
         flex-direction: column; 
-        align-items: center !important; 
-        justify-content: center;
+        align-items: center; 
         text-align: center; 
         gap: 22px; 
     }
     .hero-photo { 
         width: 130px; 
         height: auto;
-        margin: 0 auto !important;
-        display: block;
+        transform: translateY(0px) !important; /* 核心：手机彻底关闭图片偏移 */
     }
     .hero-text {
         margin-top: 0 !important;
