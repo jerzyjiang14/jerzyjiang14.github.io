@@ -72,17 +72,16 @@
     align-items: flex-start;
     gap: 36px;
   }
-  .hero-photo {
+.hero-photo {
     flex-shrink: 0;
-    width: 160px;
-    height: 200px;
+    width: 160px;    /* 控制头像最大宽度，保持页面排版协调 */
+    height: auto;    /* 高度自动跟随图片，适配原图长宽比！关键改动 */
     border-radius: 6px;
-    overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,.12);
-    object-fit: cover;
-    object-position: center top;
-    background: var(--bg-subtle);
-  }
+    object-fit: contain;
+    background: transparent; /* 移除背景底色，不再出现白条 */
+    overflow: hidden;
+}
   .hero-text h1 {
     font-size: 2rem;
     font-weight: 800;
